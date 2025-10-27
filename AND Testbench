@@ -1,0 +1,21 @@
+module bitand_test;
+
+  logic [3:0]a,b;
+  logic [3:0]o;
+integer i,j;
+
+bitand uut(.a(a),.b(b),.o(o));
+
+initial 
+  begin
+    $dumpfile("dump.vcd");
+    $dumpvars(1);
+    for(i=0;i<16;i=i+1) begin
+      for(j=0;j<16;j=j+1)begin
+        a = i[3:0];
+        b = j[3:0];
+      #1;
+  end
+  end
+end
+endmodule
